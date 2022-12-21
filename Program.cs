@@ -16,7 +16,7 @@ int numberB = int.Parse(Console.ReadLine()!);
 int result = numberA + numberB;
 Console.WriteLine(result);*/
 
-Console.WriteLine ("Type a number: ");
+/*Console.WriteLine ("Type a number: ");
 int number = int.Parse(Console.ReadLine()!);
 
 //with math:
@@ -24,4 +24,18 @@ int sqr = number * number;
 
 // with library
 int sqr1 = Convert.ToInt32(Math.Pow(number, 2)!);
-Console.WriteLine($"The square of {number} equals to: with math {sqr}, with library {sqr1}");
+Console.WriteLine($"The square of {number} equals to: with math {sqr}, with library {sqr1}");*/
+
+Console.WriteLine ("Type a number: ");
+int num = int.Parse(Console.ReadLine()!);
+
+int num1 = - num;
+
+while (num1 <= num){
+    Console.Write($"{num1} ");
+    num1 ++;
+};
+
+
+
+
