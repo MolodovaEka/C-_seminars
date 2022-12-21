@@ -26,7 +26,7 @@ int sqr = number * number;
 int sqr1 = Convert.ToInt32(Math.Pow(number, 2)!);
 Console.WriteLine($"The square of {number} equals to: with math {sqr}, with library {sqr1}");*/
 
-Console.WriteLine ("Type a number: ");
+/*Console.WriteLine ("Type a number: ");
 int num = int.Parse(Console.ReadLine()!);
 
 int num1 = - num;
@@ -34,7 +34,20 @@ int num1 = - num;
 while (num1 <= num){
     Console.Write($"{num1} ");
     num1 ++;
-};
+};*/
+
+//Напишите программу, которая принимает на вход два числе и проверяет, является ли первое квадратом второго
+/*Console.WriteLine ("Type number A: ");
+int numberA = int.Parse(Console.ReadLine()!);
+Console.WriteLine ("Type number B: ");
+int numberB = int.Parse(Console.ReadLine()!);
+
+if (numberA / numberB == numberB){
+    Console.WriteLine ("является");
+}
+else{
+    Console.WriteLine ("не является");
+};*/
 
 
 
