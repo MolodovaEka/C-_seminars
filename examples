@@ -1,5 +1,2 @@
-//Console.Writeline("Hello, world!");
-Console.WriteLine ("Type in your username ");
-string username = Console.ReadLine()
-Console.Write("Hello, ");
-Console.Write(username);
+/*Console.Writeline("Hello, world!");*/
+
