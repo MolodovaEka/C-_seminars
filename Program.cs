@@ -50,5 +50,87 @@ else{
 };*/
 
 
+//Задача 1: Напишите программу, которая на вход принимает два числа
+//и выдаёт, какое число большее, а какое меньшее.
+/*Console.WriteLine("Type number A: ");
+int numberA = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine("Type number B: ");
+int numberB = int.Parse(Console.ReadLine()!);
+
+if(numberA > numberB){
+    Console.WriteLine ("max is number A");
+}
+else{
+Console.WriteLine("max is number B");  
+};
+//В случае, когда вводятся равные числа, программа выдаст на выходе число В*/
+
+
+//Задача 2: Напишите программу, которая принимает на вход три числа
+//и выдаёт максимальное из этих чисел.
+
+/*Console.WriteLine("Type number A: ");
+int numberA  = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine("Type number B: ");
+int numberB = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine("Type number C: ");
+int numberC = int.Parse(Console.ReadLine()!);
+
+int max = numberA;
+
+if(numberA > numberB){
+    max = numberA;
+}
+else{
+    max = numberB;
+};
+
+if(numberC > max){
+    Console.WriteLine($"max number is {numberC}");
+}
+else{
+    Console.WriteLine ($"max number is {max}");
+};*/
+
+//Задача 3: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
+
+/*Console.WriteLine("Type a number: ");
+int number = int.Parse(Console.ReadLine()!);
+if(number % 2 == 0)
+{
+    Console.WriteLine("The number is even");
+}
+else
+{
+    Console.WriteLine("The number is odd");
+
+};*/
+
+
+//Задача 4: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N
+
+Console.WriteLine("Type a number: ");
+int number = int.Parse(Console.ReadLine()!);
+int count = 0;
+while(count <= number)
+{
+    Console.Write($"{count} ");
+    count +=2;
+};
+
+
+
+
+
+
+
+
+
+
+
+
 
 
