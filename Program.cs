@@ -112,17 +112,89 @@ else
 
 //Задача 4: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N
 
-Console.WriteLine("Type a number: ");
+/*Console.WriteLine("Type a number: ");
 int number = int.Parse(Console.ReadLine()!);
 int count = 0;
 while(count <= number)
 {
     Console.Write($"{count} ");
     count +=2;
+};*/
+
+// Задача 1: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+
+/*Console.WriteLine("Type a number: ");
+int number = int.Parse(Console.ReadLine()!);
+int number1 = (number / 10);
+if(number / 100 < 1 || number / 100 > 9)
+{
+    Console.WriteLine("The number is not three-figure");
+}
+else
+{
+Console.WriteLine($"{number1 % 10}");
+};*/
+
+// Задача 2: Напишите программу, которая выводит третью цифру заданного числа
+// или сообщает, что третьей цифры нет.
+
+/*Console.WriteLine("Type a number: ");
+int number = int.Parse(Console.ReadLine()!);
+int Result = (number / 10);
+if(Result < 10)
+{
+Console.WriteLine("There is no thrird figure in that number");
+}
+else if(Result < 100)
+{
+
+    Console.WriteLine($"Third figure is {number % 10}");
+}
+else if(Result < 1000)
+{
+
+    Console.WriteLine($"Third figure is {Result % 10}");
+}
+else if(Result < 10000)
+{
+    Console.WriteLine($"Third figure is {Result / 10 % 10}");
+}
+else
+    Console.WriteLine("I don't work with numbers that big");*/
+
+// Вариант решения 2.
+
+// Решение с использованием массива
+
+/*Console.WriteLine("Type a number: ");
+string N = Console.ReadLine();
+if (N.Length < 3)
+{
+    Console.WriteLine("There is no third figure in that number");
+}
+else
+{
+    Console.WriteLine(N[2]);
+};*/
+
+//Задача 3: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет,
+//является ли этот день выходным. Обязательна проверка на ввод числа <1 и >7
+
+Console.WriteLine("Type a number: ");
+int number = int.Parse(Console.ReadLine()!);
+
+if(number < 1 || number > 7)
+{
+    Console.WriteLine("There is no such weekday");
+}
+else if(number < 6)
+{
+    Console.WriteLine("Alas, it's working day");
+}
+else if(number >= 6)
+{
+    Console.WriteLine("Hooray, it's weekend!");
 };
-
-
-
 
 
 
