@@ -254,7 +254,21 @@ int Bz = Convert.ToInt32(Console.ReadLine()!);
 double Result = Math.Sqrt(Math.Pow((Ax - Bx),2) + Math.Pow((Ay - By),2) + Math.Pow((Az - Bz),2));
 Console.WriteLine($"The distance between the two points is {Result}");*/
 
+// Математический вариант решения задачи 19. (Напишите программу,
+//которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом)
 
+Console.WriteLine("Type a number: ");
+int number = Convert.ToInt32(Console.ReadLine()!);
+if(number / 10000 >= 10 || number / 10000 < 1)
+{
+    Console.WriteLine("This number is not five-figure");
+}
+else if(number / 10000 == number % 10 && number / 1000 % 10 == number / 10 % 10)
+{
+    Console.WriteLine("Yes, it's a palindrome");
+}
+else
+    Console.WriteLine("No, it's not a palindrome");
 
 
 
