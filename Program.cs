@@ -180,7 +180,7 @@ else
 //Задача 3: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет,
 //является ли этот день выходным. Обязательна проверка на ввод числа <1 и >7
 
-Console.WriteLine("Type a number: ");
+/*Console.WriteLine("Type a number: ");
 int number = int.Parse(Console.ReadLine()!);
 
 if(number < 1 || number > 7)
@@ -194,7 +194,66 @@ else if(number < 6)
 else if(number >= 6)
 {
     Console.WriteLine("Hooray, it's weekend!");
-};
+};*/
+
+
+//Задача 19. Напишите программу, которая принимает на вход пятизначное число
+//и проверяет, является ли оно палиндромом.
+/*Console.WriteLine("Type a number: ");
+string N = Console.ReadLine();
+if(N.Length < 5 || N.Length > 5)
+{
+    Console.WriteLine("Please type a five-figure number");
+}
+else if(N[0] == N[4] && N[1] == N[3])
+{
+    Console.WriteLine("Yes, it's a palindrome");
+}
+else 
+{
+    Console.WriteLine("Not a palindrome");
+};*/
+
+//Задача 23. Напишите программу, которая принимает на вход число (N)
+//и выдаёт таблицу кубов чисел от 1 до N.
+
+/*Console.WriteLine("Type a number: ");
+int number = Convert.ToInt32(Console.ReadLine()!);
+
+for(int i = 1; i <= number; i++)
+{
+    Console.WriteLine(Math.Pow(i,3));
+};*/
+
+/*Console.WriteLine("Type a number: ");
+int number = Convert.ToInt32(Console.ReadLine()!);
+int i = 1;
+while(i <= number)
+{
+    Console.Write($"{Math.Pow(i,3)} ") ;
+    i++;
+};*/
+
+//Задача 21. Напишите программу, которая принимает на вход координаты двух точек
+//и находит расстояние между ними в 3D пространстве.
+
+/*Console.WriteLine("Define x parameter for the point A: ");
+int Ax = Convert.ToInt32(Console.ReadLine()!);
+Console.WriteLine("Define y parameter for the point A: ");
+int Ay = Convert.ToInt32(Console.ReadLine()!);
+Console.WriteLine("Define z parameter for the point A: ");
+int Az = Convert.ToInt32(Console.ReadLine()!);
+
+Console.WriteLine("Define x parameter for the point B: ");
+int Bx = Convert.ToInt32(Console.ReadLine()!);
+Console.WriteLine("Define y parameter for the point B: ");
+int By = Convert.ToInt32(Console.ReadLine()!);
+Console.WriteLine("Define z parameter for the point B: ");
+int Bz = Convert.ToInt32(Console.ReadLine()!);
+
+double Result = Math.Sqrt(Math.Pow((Ax - Bx),2) + Math.Pow((Ay - By),2) + Math.Pow((Az - Bz),2));
+Console.WriteLine($"The distance between the two points is {Result}");*/
+
 
 
 
