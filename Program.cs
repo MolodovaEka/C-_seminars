@@ -257,7 +257,7 @@ Console.WriteLine($"The distance between the two points is {Result}");*/
 // Математический вариант решения задачи 19. (Напишите программу,
 //которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом)
 
-Console.WriteLine("Type a number: ");
+/*Console.WriteLine("Type a number: ");
 int number = Convert.ToInt32(Console.ReadLine()!);
 if(number / 10000 >= 10 || number / 10000 < 1)
 {
@@ -270,12 +270,212 @@ else if(number / 10000 == number % 10 && number / 1000 % 10 == number / 10 % 10)
 else
     Console.WriteLine("No, it's not a palindrome");
 
+//Напишите программу, которая принимает на вход число (А) и выдаёт сумму чисел от 1 до А.
+Console.Write("Введи число: ");
+int A = int.Parse(Console.ReadLine()!);
+Console.Write($"Сумма чисел от 1 до {A} равна {GetSum(A)}");
+
+//--------------Методы-----------------
+/*int GetSum (int A){
+    int sum = 0;
+    for(int i = 1; i <= A; i++){
+        sum = sum + i; // sum += i
+    }
+    return sum;
+}*/
+//Принять на вход число А и ввернуть произведение всех чисел от 1 до А
+
+/*Console.WriteLine ("Type a number ");
+int A = int.Parse(Console.ReadLine()!);
+Console.Write($"Factorial is equal {GetFactorial(A)}");
+
+int GetFactorial (int A)
+{
+int Factorial = 1;
+for (int i = 1; i <= A; i++)
+{
+    Factorial = Factorial * i;
+}
+return Factorial;
+}*/
+
+// Напишите программу, которая принимает на вход число и выдает количество цифр в числе
+
+/*Console.WriteLine ("Type a number ");
+int number = int.Parse (Console.ReadLine ()!);
+Console.Write($"The number of digits is {GetQuantity(number)}");
+
+
+int GetQuantity (int A)
+{
+    int Quantity = 0;
+    if (A == 0) return 1;
+    while (A > 0)
+    {Quantity = Quantity + 1; A = A / 10;}
+    return Quantity;
+}
+
+Console.WriteLine ("Type a number ");
+string Number = Console.ReadLine()!;
+Console.Write($"The number of digits is {GetQuantity2(Number)}");
+
+int GetQuantity2 (string Number)
+{
+    int Quantity2 = Number.Length;
+    return Quantity2;
+}*/
+
+//Напишите программу, которая выводит массив из восьми элементов,
+//заполненный нулями и единицами в случайном порядке
+
+
+/*int[] Array = GetArray(8);
+Console.Write($"[{String.Join(";", Array)}]");
+
+int[] GetArray (int size)
+{
+    int[] Array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        Array[i] = new Random().Next(2);
+    }
+    return Array;
+}*/
+
+
+//Напишите программу замены элементов массива: 
+// положительные элементы замените на отрицательные, и наоборот
+
+/*int[] GetArray (int size)
+{
+    int[] Array = new int[size];
+    for (int i =0; i < size; i++)
+    {
+      Array[i] = new Random().Next(-10, 11);  
+    }
+    return Array;
+}
+/*int[] Array = GetArray(10);
+Console.WriteLine($"[{String.Join(", ",Array)}]");
+for (int i = 0; i < Array.Length; i++)
+{
+    Array[i] = Array[i] * (-1);
+}
+Console.WriteLine($"[{String.Join(", ",Array)}]");*/
+
+//  Задайте массив и напишите программу,
+// определяет, присутствует ли ли заданное число в массиве
+/*int[] GetArray (int size)
+{
+    int[] Array = new int[size];
+    for (int i =0; i < size; i++)
+    {
+      Array[i] = new Random().Next(-10, 11);  
+    }
+    return Array;
+}
+
+int[] Array = GetArray(10);
+int Find = -5;
+Console.WriteLine($"[{String.Join(", ",Array)}]");
+if (FindElement(Array, Find))
+{
+Console.WriteLine($"Данный элемент найден");
+}
+else
+{
+    Console.WriteLine($"Данный элемент не найден");
+}
+
+bool FindElement (int[] Array, int Find)
+{
+foreach (int ArrayEl in Array)
+{
+    if (ArrayEl == Find)
+    {
+        return true;
+    }
+}
+return false;
+}*/
+
+// Задача 35: Задайте одномерный массив из 123 случайных чисел.
+// Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
+
+/*int[] Array = GetArray(123);
+
+int[] GetArray (int size)
+{
+    int[] Array = new int[size];
+    for (int i =0; i < size; i++)
+    {
+      Array[i] = new Random().Next(0, 1001);  
+    }
+    return Array;
+}
+Console.WriteLine($"[{String.Join(", ",Array)}]");
+int count = 0;
+for (int i = 0; i <= 122; i++)
+{
+if (Array[i] >= 10 && Array[i] < 100)
+{
+    count = count + 1; 
+}
+}
+Console.WriteLine($"Количество цифр в данном диапазоне {count}");*/
 
 
 
+// --------------------Домашка к семинару 12 января---------------------------------
+
+//Задача 25: Напишите цикл, который принимает на вход два числа (A и B)
+// и возводит число A в натуральную степень B
+
+/*Console.WriteLine("Type number A ");
+int A = int.Parse (Console.ReadLine()!);
+Console.WriteLine("Type number B ");
+int B = int.Parse (Console.ReadLine()!);
+Console.Write($"{A} raised to the power {B} equals to {RaiseToPower(A)}");
+
+int RaiseToPower (int A)
+{
+    int result = 1;
+    for (int count = 1; count <= B; count++)
+{
+    result = result * A;
+}
+    return result;
+}*/
 
 
+//Задача 29: Напишите программу, которая задаёт массив из 8 элементов
+//и выводит их на экран. (числа берете любые)
+/*int[] Array = GetArray(8);
+Console.Write($"[{String.Join(";", Array)}]");
 
+int[] GetArray (int size)
+{
+    int[] Array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        Array[i] = new Random().Next(30);
+    }
+    return Array;
+}*/
 
+//Задача 27: Напишите программу, которая принимает на вход число
+//и выдаёт сумму цифр в числе.
 
+Console.WriteLine ("Type a number ");
+int[] Number = Console.ReadLine()!;
+Console.Write($"The sum of figures equals to {GetFiguresSum(Number)}");
 
+int GetFiguresSum (int[] Number)
+{
+    int sum = 0;
+    int i = 0;
+    int size = Number.Length;
+    while (i <= size)
+    {sum = sum + Convert.ToInt32(Number[i]); i++;}
+    return sum;
+}
