@@ -553,7 +553,7 @@ Console.WriteLine($"The sum of elements with odd indexes is {count}.");*/
 // Парой считаем первый и последний элемент, второй и предпоследний и т.д.
 // Результат запишите в новом массиве.
 
-int[] Array = GetArray(12);
+int[] Array = GetArray(13);
 Console.Write($"[{String.Join(",", Array)}] ");
 
 int[] GetArray (int size)
