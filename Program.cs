@@ -466,7 +466,7 @@ int[] GetArray (int size)
 //Задача 27: Напишите программу, которая принимает на вход число
 //и выдаёт сумму цифр в числе.
 
-Console.WriteLine ("Type a number ");
+/*Console.WriteLine ("Type a number ");
 int[] Number = Console.ReadLine()!;
 Console.Write($"The sum of figures equals to {GetFiguresSum(Number)}");
 
@@ -478,4 +478,103 @@ int GetFiguresSum (int[] Number)
     while (i <= size)
     {sum = sum + Convert.ToInt32(Number[i]); i++;}
     return sum;
+}*/
+
+//Задача 27: Напишите программу, которая принимает на вход число
+//и выдаёт сумму цифр в числе.
+
+/*Console.WriteLine ("Type a number ");
+int Number = int.Parse(Console.ReadLine()!);
+Console.Write($"The sum of figures equals to {GetFiguresSum(Number)}");
+
+int GetFiguresSum (int Number)
+{
+   int sum = 0;
+   while (Number > 0)
+   {
+    sum = sum + Number % 10;
+    Number = Number / 10;
+   }
+   return sum; 
+}*/
+
+// --------------------Домашка к семинару 16 января---------------------------------
+
+//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами.
+// Напишите программу, которая покажет количество чётных чисел в массиве.
+
+/*int[] Array = GetArray(12);
+Console.Write($"[{String.Join(",", Array)}] ");
+
+int[] GetArray (int size)
+{
+    int[] Array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        Array[i] = new Random().Next(100,1000);
+    }
+    return Array;
+}
+int count = 0;
+for (int i = 0; i <= 11; i++)
+{
+if (Array[i] % 2 == 0)
+{
+    count = count + 1; 
+}
+}
+Console.WriteLine($"There are {count} even numbers in this array.");*/
+
+
+// Задача 36: Задайте одномерный массив, заполненный случайными числами.
+// Найдите сумму элементов, стоящих на нечётных индексах.
+
+/*int[] Array = GetArray(12);
+Console.Write($"[{String.Join(",", Array)}] ");
+
+int[] GetArray (int size)
+{
+    int[] Array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        Array[i] = new Random().Next(1,10);
+    }
+    return Array;
+}
+int count = 0;
+for (int i = 1; i <= 11; i+=2)
+{
+    count = count + Array[i]; 
+}
+Console.WriteLine($"The sum of elements with odd indexes is {count}.");*/
+
+
+// Задача 37: Найдите произведение пар чисел в одномерном массиве.
+// Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+// Результат запишите в новом массиве.
+
+int[] Array = GetArray(12);
+Console.Write($"[{String.Join(",", Array)}] ");
+
+int[] GetArray (int size)
+{
+    int[] Array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        Array[i] = new Random().Next(1,10);
+    }
+    return Array;
+}
+
+int[] NewArray = GetNewArray(Array.Length / 2);
+Console.Write($"[{String.Join(",", NewArray)}] ");
+
+int[] GetNewArray (int size)
+{
+    int[] NewArray = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        NewArray[i] = Array[i] * Array[Array.Length - i - 1];
+    }
+    return NewArray;
 }
