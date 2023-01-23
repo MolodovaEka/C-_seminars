@@ -299,7 +299,8 @@ for (int i = 1; i <= A; i++)
 return Factorial;
 }*/
 
-// Напишите программу, которая принимает на вход число и выдает количество цифр в числе
+// Напишите программу, которая принимает на вход число
+// и выдает количество цифр в числе
 
 /*Console.WriteLine ("Type a number ");
 int number = int.Parse (Console.ReadLine ()!);
@@ -685,4 +686,277 @@ int[] Fibonacci(int size)
     return res;
 }*/
 
+// --------- Семинар 23 января -------------------------- 
+// Задача 46: Задайте двумерный массив размером m×n,
+// заполненный случайными целыми числами.
+/*Console.Write("Введите количество строк: ");
+int rows = int.Parse(Console.ReadLine()!);
 
+Console.Write("Введите количество столбцов: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);*/
+
+
+
+// -------------------Методы---------------------------------
+/*int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+void PrintArray(int[,] array){
+    for(int i = 0; i < array.GetLength(0); i++){
+        for(int j = 0; j < array.GetLength(1); j++){
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}*/
+// Задача 46: Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
+/*Console.Write("Введите количество строк: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Введите количество столбцов: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);
+
+
+
+// -------------------Методы---------------------------------
+int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+void PrintArray(int[,] array){
+    for(int i = 0; i < array.GetLength(0); i++){
+        for(int j = 0; j < array.GetLength(1); j++){
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}*/
+
+// Задача 48: Задайте двумерный массив размера m на n,
+// каждый элемент в массиве находится по формуле: 
+// Aₘₙ = m+n. Выведите полученный массив на экран.
+
+/*int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++){
+    for(int j = 0; j < n; j++){
+    result[i,j] = i + j;
+        }
+    }
+    return result;
+}
+
+void PrintArray(int[,] array){
+    for(int i = 0; i < array.GetLength(0); i++){
+        for(int j = 0; j < array.GetLength(1); j++){
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}*/
+
+// **Задача 49:** Задайте двумерный массив.
+// Найдите элементы, у которых оба индекса чётные,
+// и замените эти элементы на их квадраты.
+
+/*Console.Write("Введите количество строк: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Введите количество столбцов: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);
+Console.WriteLine();
+PrintArray(GetArray2(array));
+
+int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++)
+    {
+    for(int j = 0; j < n; j++)
+    {
+    result[i,j] = i + j;
+    }
+    }
+    return result;
+}
+
+void PrintArray(int[,] array){
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+    for(int j = 0; j < array.GetLength(1); j++)
+    {
+    Console.Write($"{array[i,j]} ");
+    }
+        Console.WriteLine();
+    }
+}
+
+int[,] GetArray2(int[,] array)
+{
+   // int[,] Array2 = new int[rows,columns];
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+    for(int j = 0; j < array.GetLength(1); j++)
+    {
+    if (i % 2 == 0 && j % 2 == 0) 
+    array[i,j] = array[i,j] * array[i,j];
+    }
+    }
+    return array;
+}*/
+//Задача 51:** Задайте двумерный массив.
+// Найдите сумму элементов, находящихся на главной диагонали
+//(с индексами (0,0); (1;1) и т.д.
+/*Console.Write("Введите количество строк: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Введите количество столбцов: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);
+Console.WriteLine($"The sum is equal to {GetSumOfElements(array)}");
+
+int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++)
+    {
+    for(int j = 0; j < n; j++)
+    {
+    result[i,j] = i + j;
+    }
+    }
+    return result;
+}
+
+void PrintArray(int[,] array){
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+    for(int j = 0; j < array.GetLength(1); j++)
+    {
+    Console.Write($"{array[i,j]} ");
+    }
+        Console.WriteLine();
+    }
+}
+
+int GetSumOfElements(int[,] array)
+{
+    int sum = 0;
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+    for(int j = 0; j < array.GetLength(1); j++)
+    {
+    if (i == j) 
+    sum = sum + array[i,j];
+    }
+    }
+    return sum;
+}
+*/
+// -------------- Домашка 19 января ------------------------
+
+//Задача 41: Пользователь вводит с клавиатуры M чисел.
+//Посчитайте, сколько чисел строго больше 0 ввёл пользователь.
+
+/*Console.WriteLine("Enter an array of numbers separated by spaces");
+string numbers = Console.ReadLine()!;
+string[] array = numbers.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+Console.Write($"The sum of negative numbers in this array is {GetSumOfNegatives(array)}");
+
+int GetSumOfNegatives(string[] array)
+{
+    int size = array.Length;
+    int sum = 0;
+    int i = 0;
+    while(i < size)
+{
+    if (Convert.ToInt32(Convert.ToString(array[i])) < 0)
+    sum += 1;
+    i++;
+}
+return sum;
+};*/
+
+// Задача 43: Написать программу, которая на вход принимает массив
+// из любого количества элементов (не менее 6) в промежутке от 0 до 100,
+// а на выходе выводит этот же массив, отсортированный по возрастанию.
+
+int[] array = GetArray(10);
+Console.Write($"[{String.Join(",", array)}] ");
+Console.WriteLine();
+
+SortAscendingOrder(array);
+Console.Write($"[{String.Join(",", array)}] ");
+Console.WriteLine();
+
+ArrayAscending(array);
+Console.Write($"[{String.Join(",", array)}] ");
+
+// ----------------- методы ---------------------------------
+int[] GetArray (int size)
+{
+    int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(0,100);
+    }
+    return array;
+};
+
+void SortAscendingOrder (int[] array)
+{
+    int size = array.Length;
+    int temp;
+    for (int i = 0; i < size; i++)
+    {
+    for (int j = i + 1; j < size; j++)
+    {
+    if (array[i] > array[j])
+    {
+    temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+    } 
+    }
+    }               
+}
+
+int[] ArrayAscending (int[] array)
+{
+    int i = 0;
+    while (i < array.Length - 1)
+    {
+    int j = i + 1;
+    int min = i;
+    if (array[j] < array[min]) min = j;
+    {
+    int temp = array[min];
+    array[min] = array[i];
+    array[i] = temp;
+    }
+    i++;
+    } 
+    return array; 
+}
