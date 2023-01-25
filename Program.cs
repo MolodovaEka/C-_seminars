@@ -719,7 +719,8 @@ void PrintArray(int[,] array){
         Console.WriteLine();
     }
 }*/
-// Задача 46: Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
+// Задача 46: Задайте двумерный массив размером m×n,
+// заполненный случайными целыми числами.
 /*Console.Write("Введите количество строк: ");
 int rows = int.Parse(Console.ReadLine()!);
 
@@ -914,7 +915,7 @@ Console.WriteLine();
 ArrayAscending(array);
 Console.Write($"[{String.Join(",", array)}] ");
 
-// ----------------- методы ---------------------------------
+// ----------------- methods ---------------------------------
 int[] GetArray (int size)
 {
     int[] array = new int[size];
