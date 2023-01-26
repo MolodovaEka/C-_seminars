@@ -904,7 +904,7 @@ return sum;
 // из любого количества элементов (не менее 6) в промежутке от 0 до 100,
 // а на выходе выводит этот же массив, отсортированный по возрастанию.
 
-int[] array = GetArray(10);
+/*int[] array = GetArray(10);
 Console.Write($"[{String.Join(",", array)}] ");
 Console.WriteLine();
 
@@ -960,4 +960,385 @@ int[] ArrayAscending (int[] array)
     i++;
     } 
     return array; 
+}*/
+
+
+
+
+// -------------- СЕМИНАР 26 ЯНВАРЯ ----------------------------------------------
+//Задача 53: Задайте двумерный массив.
+//Напишите программу, которая поменяет местами первую и последнюю строку массива.
+
+/*Console.Write("Enter a number of rows: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter a number of columns: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);
+Console.WriteLine();
+
+ChangeLine(array);
+PrintArray(array);
+
+
+// ------------------- methods -----------------------------
+/*int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+void PrintArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+
+    }
+}
+
+void ChangeLine (int[,] array)
+{
+for (int j = 0; j < array.GetLength(1); j++)
+    {
+        int temp = array[0,j];
+        array[0,j] = array[array.GetLength(0)-1, j];
+        array[array.GetLength(0)-1, j] = temp;
+    }
+}*/
+
+//Задача 55: Задайте двумерный массив.
+// Напишите программу, которая заменяет строки на столбцы.
+// В случае, если это невозможно, программа должна вывести
+// сообщение для пользователя.
+
+/*Console.Write("Enter a number of rows: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter a number of columns: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+if (rows != columns)
+{
+    Console.WriteLine("Такая замена невозможна");
+}
+else 
+{
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);
+Console.WriteLine();
+
+int[,] NewArray = ChangeRowsToColumns(array);
+PrintArray(NewArray);
+}
+
+int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+void PrintArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+
+    }
+}
+
+int[,] ChangeRowsToColumns (int[,] array)
+{
+
+    int[,] NewArray = new int[array.GetLength(0), array.GetLength(1)];
+
+    for (int i = 0 ; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            NewArray[j,i] = array[i,j];
+        }
+    }
+    return NewArray;
+}*/
+
+// Задача 59: Из двумерного массива целых чисел удалить строку и столбец,
+// на пересечении которых расположен наименьший элемент.
+
+/*Console.Write("Enter a number of rows: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter a number of columns: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);
+Console.WriteLine();
+
+int[] Indexes = FindIndexesOfMin(array);
+Console.WriteLine($"{Indexes[0]}, {Indexes[1]}");
+Console.WriteLine();
+PrintArray(NewArray(array, FindIndexesOfMin(array)));
+
+int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+void PrintArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+
+    }
+}
+
+int[] FindIndexesOfMin(int[,] array)
+{
+    int min = array[0,0];
+    int[] MinIndexes = new int[2];
+
+    for (int i = 0; i < array.GetLength(0); i++ )
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+        if (array[i,j] < min)
+        {min = array[i, j];
+        MinIndexes[0] = i;
+        MinIndexes[1] = j;
+        }
+
+        }
+    }
+return MinIndexes;
+}
+
+int[,] NewArray(int[,] array, int[] Indexes)
+{
+int[,] NewArray = new int[array.GetLength(0)-1, array.GetLength(1)-1];
+int rows = 0;
+int columns = 0;
+for (int i = 0; i < array.GetLength(0); i++)
+    {
+        if (i == Indexes[0]) continue;
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+        if (j == Indexes[1]) continue;
+        NewArray[rows,columns] = array[i,j];
+        columns++;
+        }
+        columns = 0;
+        rows++;
+    }
+    return NewArray;
+}*/
+
+
+// ------------- Домашка 23 января -----------------------------------
+
+// Задача 47. Задайте двумерный массив размером m×n,
+// заполненный случайными вещественными числами.
+
+/*Console.Write("Enter a number of rows: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter a number of columns: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+double[,] array = GetArray(rows, columns, -10, 10);
+PrintArray(array);
+
+----------------- methods ----------------------
+double[,] GetArray(int m, int n, int minValue, int maxValue)
+{
+    double[,] result = new double[m,n];
+    for(int i = 0; i < m; i++)
+{
+    for(int j = 0; j < n; j++){
+    result[i,j] = Math.Round(new Random().NextDouble()
+    + new Random().Next(minValue,maxValue),1); 
+    }
+    }
+    return result;
+}
+
+void PrintArray(double[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++){
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+};*/
+
+// Задача 50. Напишите программу, которая на вход принимает число,
+// и проверяет есть ли такое число в двумерном массиве,
+// а также возвращает сообщение о том, что оно найдено
+// или же указание, что такого элемента нет.
+
+/*Console.Write("Enter a number of rows: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter a number of columns: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 0, 30);
+PrintArray(array);
+Console.WriteLine();
+
+Console.Write("What number are we looking for? ");
+int Number = int.Parse(Console.ReadLine()!);
+CheckNumber(array, Number);
+
+// ------------------- Methods ---------------------------------
+int[,] GetArray(int m, int n, int minValue, int maxValue){
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+void PrintArray(int[,] array){
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+if (CheckNumber(array, Number))
+    {Console.WriteLine($"The Number {Number} is present in this array");}
+    else
+    {Console.WriteLine("There is no such number in this array");}
+
+bool CheckNumber (int[,] array, int Number)
+{
+    foreach (int arrayEl in array)
+    {
+    if (arrayEl == Number)
+        {return true;}
+    }
+    return false;
+}*/
+
+// Задача 52. Задайте двумерный массив из целых чисел.
+// Найдите среднее арифметическое элементов в каждом столбце.
+
+Console.Write("Enter a number of rows: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter a number of columns: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 0, 10);
+PrintArray(array);
+Console.WriteLine();
+
+int[] Sum = ColumnsSum (array);
+Console.Write($"[{String.Join(",", Sum)}]");
+Console.WriteLine();
+
+double[] Mean = GetArithmeticMean(Sum);
+Console.Write($"[{String.Join(";", Mean),1}]");
+
+// ------------------- methods -----------------------------
+
+int[,] GetArray(int m, int n, int minValue, int maxValue)
+{
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+void PrintArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+int[] ColumnsSum (int[,] array)
+{
+    int size = array.GetLength(1);
+    int[] Sum = new int[size];
+    int sum = 0;
+    int i = 0;
+    int j = 0;
+
+    while(j < size)
+        {
+            while (i < array.GetLength(0)) 
+            {
+                sum = sum + array[i,j];
+                i++;
+                Sum[j] = sum;
+            }
+            i = 0;
+            sum = 0;
+            j++;
+        }
+        return Sum;
+}
+
+double[] GetArithmeticMean(int[] Sum)
+{
+    int size = array.GetLength(1);
+    double[] Mean = new double[size];
+    for(int j = 0; j < size; j++)
+        {
+            Mean[j] = Convert.ToDouble(Sum[j]) / size;
+        }
+    return Mean;
 }
