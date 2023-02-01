@@ -1265,7 +1265,7 @@ bool CheckNumber (int[,] array, int Number)
 // Задача 52. Задайте двумерный массив из целых чисел.
 // Найдите среднее арифметическое элементов в каждом столбце.
 
-Console.Write("Enter a number of rows: ");
+/*Console.Write("Enter a number of rows: ");
 int rows = int.Parse(Console.ReadLine()!);
 
 Console.Write("Enter a number of columns: ");
@@ -1312,7 +1312,7 @@ void PrintArray(int[,] array)
 int[] ColumnsSum (int[,] array)
 {
     int size = array.GetLength(1);
-    int[] Sum = new int[size];
+    int [] Sum = new int[size];
     int sum = 0;
     int i = 0;
     int j = 0;
@@ -1341,4 +1341,143 @@ double[] GetArithmeticMean(int[] Sum)
             Mean[j] = Convert.ToDouble(Sum[j]) / size;
         }
     return Mean;
+}*/
+
+// Задача 63:** Задайте значение N. Напишите программу,
+// которая выведет все натуральные числа в промежутке от 1 до N.
+
+// N = 5 -> "1, 2, 3, 4, 5"
+
+// N = 6 -> "1, 2, 3, 4, 5, 6"
+
+/*Console.Write("Введи число: ");
+int N  = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine(PrintNumbers(1,N));
+
+// ------------------Метод------------------
+string PrintNumbers(int start, int end)
+{
+    if(start == end) return start.ToString();
+    return (start + " " + PrintNumbers(start + 1, end));
+}*/
+
+
+//Задача 65: Задайте значения M и N.
+// Напишите программу, которая выведет все натуральные числа в промежутке от M до N.
+
+//M = 1; N = 5. -> "1, 2, 3, 4, 5"
+// M = 4; N = 8. -> "4, 5, 6, 7, 8"
+
+/*Console.WriteLine("Введите число  N");
+int N = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine("Введите число  M");
+int M = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine(PrintNumbers(N,M));
+
+
+string PrintNumbers(int start, int end)
+{
+    if(start == end) return start.ToString();
+    return (start + " " + PrintNumbers(start + 1, end));
+}*/
+
+// Принять на вход число, вернуть сумму его цифр
+
+/*Console.WriteLine("Введите число  N");
+int N = int.Parse(Console.ReadLine()!);
+Console.WriteLine(NumberFiguresSum(N));
+
+int NumberFiguresSum(int N)
+{
+    if(N == 0) return 0;
+    return (N % 10 + NumberFiguresSum(N / 10));
+}*/
+
+// Возведите число А в степень Б с помощью рекурсии
+
+/*Console.WriteLine("Введите число A");
+int A = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine("Введите число B");
+int B = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine(PoweredBy(A,B));
+
+// --------------method-------------------
+
+int PoweredBy(int A, int B)
+{
+    if(B == 0) return 1;
+    if(B == 1) return A;
+    return (A * PoweredBy(A, B - 1));
+}*/
+
+// Найдите факториал числа c помощью рекурсии
+
+/*Console.WriteLine("Введите число");
+int N = int.Parse(Console.ReadLine()!);
+Console.WriteLine(FactorialOf(N));
+
+int FactorialOf(int N)
+{
+    if(N == 0) return 1;
+    if(N == 1) return 1;
+    return (N * FactorialOf(N - 1));
+}*/
+
+
+// ------------------ Домашка 30 января --------------------------------
+// Задача 64: Выполнить с помощью рекурсии.Задайте значение N.
+// Напишите программу, которая выведет все натуральные числа в промежутке от N до 1.
+
+/*Console.Write("Enter a number: ");
+int N  = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine(PrintNumbers(N,1));
+
+// ------------------Метод------------------
+string PrintNumbers(int start, int end)
+{
+    if(start == end) return start.ToString();
+    return (start + " " + PrintNumbers(start - 1, end));
+}*/
+
+// Задача 66: Выполнить с помощью рекурсии.Задайте значения M и N.
+// Напишите программу, которая найдёт сумму натуральных элементов
+// в промежутке от M до N.
+
+/*Console.WriteLine("Enter number M");
+int M = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine("Enter number N");
+int N = int.Parse(Console.ReadLine()!);
+
+Console.WriteLine(SumOfFiguresBetweenMAndN(M,N));
+
+int SumOfFiguresBetweenMAndN(int M, int N)
+{
+    if (M == N) return M;
+    return (M + SumOfFiguresBetweenMAndN(M + 1, N));
+}*/
+
+// Задача 68: Выполнить с помощью рекурсии.
+// Напишите программу вычисления функции Аккермана с помощью рекурсии.
+// Даны два неотрицательных числа m и n.
+ 
+Console.Write("Введите число n: ");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число m: ");
+int m = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine(Akkerman(n, m));
+
+int Akkerman(int n, int m)
+{
+    if (n == 0) return m + 1;
+    if (n != 0 && m == 0) return Akkerman(n - 1, 1);
+    if (n > 0 && m > 0) return Akkerman(n - 1, Akkerman(n, m - 1));
+    return Akkerman(n,m);
 }
