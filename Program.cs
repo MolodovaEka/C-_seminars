@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
-//Console.WriteLine("Hello, World!");//
+/*Console.WriteLine("Hello, World!");*/
 
 /*Console.WriteLine ("Type in your username ");
 string username = Console.ReadLine();
@@ -36,7 +36,8 @@ while (num1 <= num){
     num1 ++;
 };*/
 
-//Напишите программу, которая принимает на вход два числе и проверяет, является ли первое квадратом второго
+//Напишите программу, которая принимает на вход два числе
+// и проверяет, является ли первое квадратом второго
 /*Console.WriteLine ("Type number A: ");
 int numberA = int.Parse(Console.ReadLine()!);
 Console.WriteLine ("Type number B: ");
@@ -1467,7 +1468,7 @@ int SumOfFiguresBetweenMAndN(int M, int N)
 // Напишите программу вычисления функции Аккермана с помощью рекурсии.
 // Даны два неотрицательных числа m и n.
  
-Console.Write("Введите число n: ");
+/* Console.Write("Введите число n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число m: ");
 int m = Convert.ToInt32(Console.ReadLine());
@@ -1480,4 +1481,264 @@ int Akkerman(int n, int m)
     if (n != 0 && m == 0) return Akkerman(n - 1, 1);
     if (n > 0 && m > 0) return Akkerman(n - 1, Akkerman(n, m - 1));
     return Akkerman(n,m);
+};*/
+
+
+// --------------------- Домашка 26 января -----------------------------------
+
+// Задача 56: Задайте прямоугольный двумерный массив. Напишите программу,
+// которая будет находить строку с наименьшей суммой элементов.
+
+/*Console.Write("Enter a number of rows: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter a number of columns: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+if (rows == columns)
+{
+    Console.WriteLine("In a rectangular array the numbers of rows and columns must differ.");
 }
+else 
+{   
+    int[,] array = GetArray(rows, columns, 0, 10);
+    PrintArray(array);
+    Console.WriteLine();
+    
+    int[] Sum = RowsSum(array);
+    Console.Write($"[{String.Join(",", Sum)}]");
+    Console.WriteLine();
+
+    int Number = FindRowNumber(Sum);
+    Console.Write($"The number of row with minimal sum is {Number}");
+};
+
+// ------------------- methods -----------------------------
+
+int[,] GetArray(int m, int n, int minValue, int maxValue)
+{
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+void PrintArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+int[] RowsSum (int[,] array)
+{
+    int size = array.GetLength(0);
+    int[] Sum = new int[size];
+    int sum = 0;
+    int i = 0;
+    int j = 0;
+
+    while(i < size)
+        {
+            while (j < array.GetLength(1)) 
+            {
+                sum = sum + array[i,j];
+                j++;
+                Sum[i] = sum;
+            }
+            j = 0;
+            sum = 0;
+            i++;
+        }
+        return Sum;
+}
+
+int FindRowNumber(int[] Sum)
+{
+    int min = 0;
+    int size = Sum.Length;
+    int rowNumber = 0;
+
+    for(int i = 0; i < size; i++)
+    {
+        if (Sum[i] <= Sum[min])
+        {
+            min = i;
+            rowNumber = min + 1; // Я ищу номер (не индекс) строки, поэтому + 1
+        }  
+        else continue;
+    }
+    return rowNumber;
+}*/
+
+// Задача 54: Задайте двумерный массив. Напишите программу,
+// которая упорядочит по убыванию элементы каждой строки двумерного массива.
+
+/*Console.Write("Enter a number of rows: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter a number of columns: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] array = GetArray(rows, columns, 0, 9);
+PrintArray(array);
+Console.WriteLine();
+
+SortRowsDescending(array);
+PrintArray(array);
+Console.WriteLine();
+
+// ------------------- methods -----------------------------
+
+int[,] GetArray(int m, int n, int minValue, int maxValue)
+{
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+void PrintArray(int[,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write($"{array[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+void SortRowsDescending (int[,] array)
+{
+    int size = array.GetLength(0);
+    int size1 = array.GetLength(1);
+    int k = size1 - 1;
+    while (k > 0)
+    {
+        for(int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size1 - 1; j++)
+            {
+                if (array[i,j] <= array[i,j+1])
+                {
+                    int temp = array[i,j+1];
+                    array[i,j+1] = array[i,j];
+                    array[i,j] = temp;
+                 }
+            }
+        } 
+    k = k - 1; 
+    }
+}*/
+
+// Задача 58: Задайте две матрицы.
+// Напишите программу, которая будет находить произведение двух матриц.
+
+Console.Write("Enter a number of rows: ");
+int rows = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter a number of columns: ");
+int columns = int.Parse(Console.ReadLine()!);
+
+int[,] matrix1 = GetMatrix1(rows, columns, -5, 5);
+PrintMatrix(matrix1);
+Console.WriteLine();
+
+int rows1 = matrix1.GetLength(1);
+Console.Write("Enter a number of columns for matrix 2: ");
+int columns1 = int.Parse(Console.ReadLine()!);
+
+int[,] matrix2 = GetMatrix2(rows1, columns1, -5, 5);
+PrintMatrix(matrix2);
+Console.WriteLine();
+
+int[,] Scalar = GetScalarMatrix(matrix1, matrix2);
+PrintScalar(Scalar); 
+
+// ------------------- methods -----------------------------
+
+int[,] GetMatrix1(int m, int n, int minValue, int maxValue)
+{
+    int[,] result = new int[m,n];
+    for(int i = 0; i < m; i++)
+    {
+        for(int j = 0; j < n; j++)
+        {
+            result[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result;
+}
+
+void PrintMatrix(int[,] matrix1)
+{
+    for(int i = 0; i < matrix1.GetLength(0); i++)
+    {
+        for(int j = 0; j < matrix1.GetLength(1); j++)
+        {
+            Console.Write($"{matrix1[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
+int[,] GetMatrix2(int k, int l, int minValue, int maxValue)
+{
+    int[,] result1 = new int[k,l];
+    for(int i = 0; i < k; i++)
+    {
+        for(int j = 0; j < l; j++)
+        {
+            result1[i,j] = new Random().Next(minValue, maxValue + 1);
+        }
+    }
+    return result1;
+}
+
+int[,] GetScalarMatrix (int[,] matrix1, int[,] matrix2)
+{
+    int[,] ScalarMatrix = new int[matrix1.GetLength(0), matrix2.GetLength(1)];
+     for(int i = 0; i < matrix1.GetLength(0); i++)
+        {
+        for(int j = 0; j< matrix2.GetLength(1); j++)
+           {
+             for(int k = 0; k < matrix1.GetLength(0); k++)
+               {
+                 ScalarMatrix[i,j]+= matrix1[i,k] * matrix2[k,j];
+             }
+        }
+     }
+    return ScalarMatrix;
+ }
+    
+
+ 
+void PrintScalar(int[,] Scalar)
+{
+    for(int i = 0; i < matrix1.GetLength(0); i++)
+    {
+        for(int j = 0; j < matrix2.GetLength(1); j++)
+        {
+            Console.Write($"{Scalar[i,j]} ");
+        }
+        Console.WriteLine();
+    }
+}
+
